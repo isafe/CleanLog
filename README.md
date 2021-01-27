@@ -4,4 +4,5 @@
 ```
 ClearnLog -EventLogName Security -Mins 5 #删除5分钟内的安全日志.
 ClearnLog -EventLogName Security -Hours 1 #删除1小时内的安全日志.
+ClearnLog -EventLogName Security -IpAddress 127.0.0.1 #删除IP为127.0.0.1的登录日志.
 ```
