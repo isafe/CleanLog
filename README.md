@@ -12,5 +12,5 @@ IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com
 ```
 ### 验证
 ```
-Get-EventLog -logname Security -InstanceId 4624 | Select-Object Index,timegenerated,@{Name='UserName'; Expression={$_.ReplacementStrings[5]}},@{Name='IP';Expression={$_.ReplacementStrings[-2]}}
+Get-EventLog -logname Security -InstanceId 4624 | Where-Object {$_.ReplacementStrings[8] -eq 3} | Select-Object Index,timegenerated,@{Name='UserName'; Expression={$_.ReplacementStrings[5]}},@{Name='IP';Expression={$_.ReplacementStrings[-9]}}
 ```
